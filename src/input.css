@@ -95,6 +95,39 @@
     @apply mt-1 text-[10px] text-ink/45;
   }
 
+  .product-card--grid {
+    @apply min-w-0;
+  }
+
+  .product-card--grid .product-card__details {
+    @apply pt-3 sm:pt-4;
+  }
+
+  .product-card--grid .product-card__title {
+    @apply text-[13px] sm:text-[15px] lg:text-base;
+  }
+
+  .product-card--grid .product-card__badge,
+  .product-card--grid .product-card__sale-badge {
+    @apply top-2 px-2 py-1 text-[8px] sm:top-3 sm:px-3 sm:py-1.5 sm:text-[9px];
+  }
+
+  .product-card--grid .product-card__badge {
+    @apply right-2 sm:right-3;
+  }
+
+  .product-card--grid .product-card__sale-badge {
+    @apply left-2 sm:left-3;
+  }
+
+  .filter-button {
+    @apply min-h-8 shrink-0 rounded-full border border-black/10 bg-white px-4 text-[10px] font-semibold text-ink/55 transition-colors duration-200 hover:border-black/25 hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vermilion focus-visible:ring-offset-2;
+  }
+
+  .filter-button[aria-pressed="true"] {
+    @apply border-ink bg-ink text-white;
+  }
+
   .campaign-banner {
     @apply relative isolate min-h-[610px] overflow-hidden rounded-2xl bg-[#b7b7b7] sm:min-h-[500px] lg:min-h-[570px];
   }

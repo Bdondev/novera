@@ -56,11 +56,13 @@
                 <a class="transition-colors hover:text-vermilion" href="#">Support</a>
               </nav>
 
-              <button class="icon-button lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
-                <span class="sr-only">Open menu</span>
-                <svg class="size-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                  <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" />
-                </svg>
+              <button class="icon-button group lg:hidden" type="button" aria-expanded="false" aria-controls="mobile-menu" data-menu-toggle>
+                <span class="sr-only" data-menu-label>Open menu</span>
+                <span class="relative block size-5" aria-hidden="true">
+                  <span class="absolute left-1/2 top-1/2 h-px w-[18px] -translate-x-1/2 -translate-y-[5px] rounded-full bg-current transition-transform duration-200 group-aria-expanded:-translate-y-1/2 group-aria-expanded:rotate-45"></span>
+                  <span class="absolute left-1/2 top-1/2 h-px w-[18px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-current transition duration-150 group-aria-expanded:scale-x-0 group-aria-expanded:opacity-0"></span>
+                  <span class="absolute left-1/2 top-1/2 h-px w-[18px] -translate-x-1/2 translate-y-[4px] rounded-full bg-current transition-transform duration-200 group-aria-expanded:-translate-y-1/2 group-aria-expanded:-rotate-45"></span>
+                </span>
               </button>
 
               <a class="absolute left-1/2 -translate-x-1/2 text-[25px] font-bold leading-none tracking-[-0.075em] text-vermilion" href="#" aria-label="Novéra home">
@@ -314,7 +316,7 @@
           </div>
         </section>
 
-        <section class="bg-white pb-14 sm:pb-20 lg:pb-24" aria-labelledby="campaign-heading">
+        <section class="bg-white pb-12 sm:pb-14" aria-labelledby="campaign-heading">
           <div class="mx-auto max-w-storefront px-5 sm:px-8 lg:px-10">
             <article class="campaign-banner">
               <img
@@ -349,6 +351,150 @@
                 <span class="absolute bottom-2.5 left-1/2 flex size-5 -translate-x-1/2 items-center justify-center rounded-full bg-vermilion text-white shadow-sm sm:size-6" aria-hidden="true">+</span>
               </a>
             </article>
+          </div>
+        </section>
+
+        <section class="bg-white pb-16 sm:pb-20 lg:pb-24" aria-labelledby="curated-styles-heading">
+          <div class="mx-auto max-w-storefront px-5 sm:px-8 lg:px-10">
+            <div class="flex flex-col gap-5 md:flex-row md:items-center md:justify-between md:gap-8">
+              <h2 id="curated-styles-heading" class="font-display text-[30px] font-semibold leading-[0.98] tracking-[-0.04em] sm:text-[36px] lg:text-[40px]">
+                Curated Styles You'll Love
+              </h2>
+
+              <div class="-mx-1 flex gap-2 overflow-x-auto px-1 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden" aria-label="Filter curated products">
+                <button class="filter-button" type="button" data-filter="all" aria-pressed="true">All Products</button>
+                <button class="filter-button" type="button" data-filter="men" aria-pressed="false">Men</button>
+                <button class="filter-button" type="button" data-filter="women" aria-pressed="false">Women</button>
+                <button class="filter-button" type="button" data-filter="kids" aria-pressed="false">Kids</button>
+                <button class="filter-button" type="button" data-filter="accessories" aria-pressed="false">Accessories</button>
+              </div>
+            </div>
+
+            <p class="sr-only" aria-live="polite" data-filter-status>Showing all 8 products.</p>
+
+            <div class="mt-8 grid grid-cols-2 gap-x-3 gap-y-9 sm:mt-10 sm:gap-x-4 sm:gap-y-12 md:grid-cols-3 lg:grid-cols-4 lg:gap-x-5 lg:gap-y-14" data-curated-grid>
+              <article class="product-card product-card--grid" data-product-category="women">
+                <a class="product-card__media group" href="#" aria-label="Heritage wool blazer">
+                  <img class="product-card__image object-[center_28%]" src="/assets/novera-new-arrival-coat.webp" alt="Woman wearing a camel tailored wool coat" />
+                  <span class="product-card__sale-badge">20% off</span>
+                  <span class="product-card__badge">Best seller</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="product-card__price">$27.99</span>
+                    <span class="product-card__compare-price">$35.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Heritage Wool Blazer</a></h3>
+                  <p class="product-card__type">Ready to Wear</p>
+                </div>
+              </article>
+
+              <article class="product-card product-card--grid" data-product-category="women">
+                <a class="product-card__media group" href="#" aria-label="Elegant evening gown">
+                  <img class="product-card__image object-[center_18%]" src="/assets/image-.png" alt="Woman in a sculptural red evening top" />
+                  <span class="product-card__badge">Trending</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="product-card__price">$27.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Elegant Evening Gown</a></h3>
+                  <p class="product-card__type">Gowns</p>
+                </div>
+              </article>
+
+              <article class="product-card product-card--grid" data-product-category="accessories">
+                <a class="product-card__media group" href="#" aria-label="Lane shoulder bag">
+                  <img class="product-card__image object-[center_56%]" src="/assets/novera-new-arrival-tote.webp" alt="Warm brown leather shoulder tote" />
+                  <span class="product-card__sale-badge">20% off</span>
+                  <span class="product-card__badge">Best seller</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="product-card__price">$21.99</span>
+                    <span class="product-card__compare-price">$27.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Lane Shoulder Bag</a></h3>
+                  <p class="product-card__type">Bags</p>
+                </div>
+              </article>
+
+              <article class="product-card product-card--grid" data-product-category="women">
+                <a class="product-card__media group" href="#" aria-label="Elegant ruffle blouse">
+                  <img class="product-card__image object-[center_20%]" src="/assets/image-.png" alt="Woman wearing a red ruffled blouse" />
+                  <span class="product-card__badge">Trending</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="product-card__price">$27.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Elegant Ruffle Blouse</a></h3>
+                  <p class="product-card__type">Blouses</p>
+                </div>
+              </article>
+
+              <article class="product-card product-card--grid" data-product-category="accessories">
+                <a class="product-card__media group" href="#" aria-label="Sable crossbody bag">
+                  <img class="product-card__image object-[center_55%]" src="/assets/novera-new-arrival-tote.webp" alt="Brown leather carryall bag" />
+                  <span class="product-card__sale-badge">25% off</span>
+                  <span class="product-card__badge">Deal seller</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="product-card__price">$27.99</span>
+                    <span class="product-card__compare-price">$36.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Sable Crossbody Bag</a></h3>
+                  <p class="product-card__type">Hand Bags</p>
+                </div>
+              </article>
+
+              <article class="product-card product-card--grid" data-product-category="kids">
+                <a class="product-card__media group" href="#" aria-label="Urban sprint sneakers">
+                  <img class="product-card__image object-[center_68%]" src="/assets/image copy 6.png" alt="Taupe suede sneakers worn with denim" />
+                  <span class="product-card__sale-badge">30% off</span>
+                  <span class="product-card__badge">Best seller</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="product-card__price">$12.99</span>
+                    <span class="product-card__compare-price">$18.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Urban Sprint Sneakers</a></h3>
+                  <p class="product-card__type">Shoes</p>
+                </div>
+              </article>
+
+              <article class="product-card product-card--grid" data-product-category="men">
+                <a class="product-card__media group" href="#" aria-label="Exhibition padded jacket">
+                  <img class="product-card__image object-[center_20%]" src="/assets/novera-new-arrival-hoodie.webp" alt="Man wearing an oversized sage hoodie" />
+                  <span class="product-card__badge">Trending</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="product-card__price">$18.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Exhibition Padded Jacket</a></h3>
+                  <p class="product-card__type">Men's Jackets</p>
+                </div>
+              </article>
+
+              <article class="product-card product-card--grid" data-product-category="accessories">
+                <a class="product-card__media group" href="#" aria-label="Elegant leather belt">
+                  <img class="product-card__image object-center" src="/assets/image copy.png" alt="Neutral accessories styled with sunglasses and gold jewelry" />
+                  <span class="product-card__sale-badge">20% off</span>
+                  <span class="product-card__badge">Trending</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="product-card__price">$27.99</span>
+                    <span class="product-card__compare-price">$34.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Elegant Leather Belt</a></h3>
+                  <p class="product-card__type">Accessories</p>
+                </div>
+              </article>
+            </div>
           </div>
         </section>
       </main>

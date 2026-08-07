@@ -1,16 +1,28 @@
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
+const menuLabel = document.querySelector("[data-menu-label]");
+
+const setMenuState = (isOpen) => {
+  menuToggle?.setAttribute("aria-expanded", String(isOpen));
+  mobileMenu?.classList.toggle("hidden", !isOpen);
+  if (menuLabel) menuLabel.textContent = isOpen ? "Close menu" : "Open menu";
+};
 
 menuToggle?.addEventListener("click", () => {
   const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-  menuToggle.setAttribute("aria-expanded", String(!isOpen));
-  mobileMenu?.classList.toggle("hidden", isOpen);
+  setMenuState(!isOpen);
 });
 
 mobileMenu?.addEventListener("click", (event) => {
   if (!(event.target instanceof HTMLAnchorElement)) return;
-  menuToggle?.setAttribute("aria-expanded", "false");
-  mobileMenu.classList.add("hidden");
+  setMenuState(false);
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") {
+    setMenuState(false);
+    menuToggle.focus();
+  }
 });
 
 document.querySelector("[data-announcement-close]")?.addEventListener("click", (event) => {
@@ -61,3 +73,42 @@ if (productRail instanceof HTMLElement) {
   new ResizeObserver(updateCarouselControls).observe(productRail);
   updateCarouselControls();
 }
+
+const filterButtons = [...document.querySelectorAll("[data-filter]")];
+const curatedProducts = [...document.querySelectorAll("[data-product-category]")];
+const filterStatus = document.querySelector("[data-filter-status]");
+
+const filterCuratedProducts = (category) => {
+  let visibleCount = 0;
+
+  curatedProducts.forEach((product) => {
+    const isVisible = category === "all" || product.dataset.productCategory === category;
+    product.hidden = !isVisible;
+    if (isVisible) visibleCount += 1;
+  });
+
+  filterButtons.forEach((button) => {
+    button.setAttribute("aria-pressed", String(button.dataset.filter === category));
+  });
+
+  if (filterStatus) {
+    const categoryName = category === "all" ? "all" : category;
+    filterStatus.textContent = `Showing ${visibleCount} ${categoryName} ${visibleCount === 1 ? "product" : "products"}.`;
+  }
+};
+
+filterButtons.forEach((button, index) => {
+  button.addEventListener("click", () => filterCuratedProducts(button.dataset.filter));
+
+  button.addEventListener("keydown", (event) => {
+    if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
+    event.preventDefault();
+
+    let nextIndex = index;
+    if (event.key === "ArrowLeft") nextIndex = (index - 1 + filterButtons.length) % filterButtons.length;
+    if (event.key === "ArrowRight") nextIndex = (index + 1) % filterButtons.length;
+    if (event.key === "Home") nextIndex = 0;
+    if (event.key === "End") nextIndex = filterButtons.length - 1;
+    filterButtons[nextIndex].focus();
+  });
+});
