@@ -38,6 +38,86 @@
   .category-card__image {
     @apply h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.035];
   }
+
+  .carousel-button {
+    @apply inline-flex size-8 items-center justify-center rounded-full border border-black/15 bg-white text-ink transition duration-200 hover:border-black/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vermilion focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:border-black/5 disabled:text-black/20;
+  }
+
+  .carousel-button--accent {
+    @apply border-vermilion bg-vermilion text-white hover:border-vermilion hover:bg-vermilion/90 disabled:border-black/5 disabled:bg-white disabled:text-black/20;
+  }
+
+  .product-rail {
+    scrollbar-width: none;
+  }
+
+  .product-rail::-webkit-scrollbar {
+    display: none;
+  }
+
+  .product-card {
+    @apply min-w-[78vw] sm:min-w-[43vw] lg:min-w-[calc((100%-3.75rem)/4)];
+  }
+
+  .product-card__media {
+    @apply relative block aspect-[4/5] overflow-hidden rounded-lg bg-porcelain;
+  }
+
+  .product-card__image {
+    @apply h-full w-full object-cover transition duration-500 ease-out group-hover:scale-[1.025];
+  }
+
+  .product-card__badge {
+    @apply absolute right-3 top-3 rounded-full bg-white px-3 py-1.5 text-[9px] font-bold text-vermilion shadow-sm;
+  }
+
+  .product-card__sale-badge {
+    @apply absolute left-3 top-3 rounded-full bg-vermilion px-3 py-1.5 text-[9px] font-bold text-white shadow-sm;
+  }
+
+  .product-card__details {
+    @apply px-0.5 pt-4;
+  }
+
+  .product-card__price {
+    @apply text-[12px] font-bold text-vermilion;
+  }
+
+  .product-card__compare-price {
+    @apply text-[10px] text-ink/35 line-through;
+  }
+
+  .product-card__title {
+    @apply mt-1 font-display text-[15px] font-semibold leading-tight tracking-[-0.015em] text-ink sm:text-base;
+  }
+
+  .product-card__type {
+    @apply mt-1 text-[10px] text-ink/45;
+  }
+
+  .campaign-banner {
+    @apply relative isolate min-h-[610px] overflow-hidden rounded-2xl bg-[#b7b7b7] sm:min-h-[500px] lg:min-h-[570px];
+  }
+
+  .campaign-banner__content {
+    @apply absolute inset-x-5 bottom-7 z-10 sm:bottom-auto sm:left-8 sm:right-auto sm:top-1/2 sm:w-[52%] sm:max-w-[580px] sm:-translate-y-1/2 lg:left-12;
+  }
+
+  .campaign-banner__eyebrow {
+    @apply inline-flex rounded-full bg-white px-3 py-1.5 text-[9px] font-bold text-vermilion shadow-sm;
+  }
+
+  .campaign-label {
+    @apply absolute z-10 items-center gap-2 rounded-full bg-white/70 px-3 py-1 text-[8px] text-ink/55 shadow-sm backdrop-blur-sm;
+  }
+
+  .campaign-label b {
+    @apply font-bold text-vermilion;
+  }
+
+  .campaign-product {
+    @apply absolute right-4 top-4 z-20 flex h-[94px] w-[210px] overflow-hidden rounded-xl border border-white/80 bg-white/95 text-ink shadow-xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:bottom-7 sm:right-7 sm:top-auto sm:h-[124px] sm:w-[300px] lg:bottom-9 lg:right-9;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {

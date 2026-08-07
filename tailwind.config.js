@@ -9,6 +9,9 @@ export default {
         porcelain: "#f7f5f2",
         ink: "#11100f"
       },
+      maxWidth: {
+        storefront: "1280px"
+      },
       fontFamily: {
         display: ["Georgia", "Times New Roman", "serif"],
         sans: ["Arial", "Helvetica Neue", "sans-serif"]

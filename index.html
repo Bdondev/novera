@@ -131,7 +131,7 @@
         </section>
 
         <section id="categories" class="bg-white" aria-labelledby="categories-heading">
-          <div class="mx-auto w-full max-w-[1280px] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:pb-[72px] lg:pt-[62px]">
+          <div class="mx-auto w-full max-w-[1280px] px-5 py-12 sm:px-8 sm:py-14 lg:px-10 lg:pb-10 lg:pt-[62px]">
           <h2 id="categories-heading" class="text-center font-display text-[30px] font-semibold leading-tight tracking-[-0.035em] sm:text-[36px] lg:text-[40px]">
             Browse by Categories
           </h2>
@@ -180,6 +180,175 @@
               </span>
             </a>
           </div>
+          </div>
+        </section>
+
+        <section class="overflow-hidden bg-white pb-10 sm:pb-12 lg:pb-10" aria-labelledby="new-arrival-heading">
+          <div class="mx-auto max-w-storefront px-5 sm:px-8 lg:px-10">
+            <div class="flex items-center justify-between gap-6">
+              <h2 id="new-arrival-heading" class="font-display text-[30px] font-semibold leading-none tracking-[-0.035em] sm:text-[36px] lg:text-[40px]">
+                New Arrival
+              </h2>
+
+              <div class="flex items-center gap-2" aria-label="New Arrival carousel controls">
+                <button
+                  class="carousel-button"
+                  type="button"
+                  aria-label="Previous products"
+                  aria-controls="new-arrival-rail"
+                  data-carousel-previous
+                >
+                  <svg class="size-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="m12 5-5 5 5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <button
+                  class="carousel-button carousel-button--accent"
+                  type="button"
+                  aria-label="Next products"
+                  aria-controls="new-arrival-rail"
+                  data-carousel-next
+                >
+                  <svg class="size-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="m8 5 5 5-5 5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <div
+              id="new-arrival-rail"
+              class="product-rail -mx-5 mt-7 flex snap-x snap-mandatory gap-3 overflow-x-auto px-5 pb-2 sm:-mx-8 sm:gap-4 sm:px-8 lg:mx-0 lg:gap-5 lg:px-0"
+              tabindex="0"
+              role="region"
+              aria-label="New Arrival products"
+              data-product-rail
+            >
+              <!-- Product card: mirrors the future snippets/product-card.liquid interface. -->
+              <article class="product-card snap-start">
+                <a class="product-card__media group" href="#" aria-label="Sabre crossbody bag">
+                  <img class="product-card__image object-[center_68%]" src="/assets/image copy 6.png" alt="Taupe suede sneaker worn with cuffed denim" />
+                  <span class="product-card__badge">Best seller</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex items-baseline gap-2">
+                    <span class="product-card__price">$27.99</span>
+                    <span class="product-card__compare-price">$35.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Sabre crossbody bag</a></h3>
+                  <p class="product-card__type">Shoes</p>
+                </div>
+              </article>
+
+              <article class="product-card snap-start">
+                <a class="product-card__media group" href="#" aria-label="Crestline wool coat">
+                  <img class="product-card__image object-[center_24%]" src="/assets/image copy 3.png" alt="Model in a camel wool overcoat" />
+                  <span class="product-card__badge">Best seller</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex items-baseline gap-2">
+                    <span class="product-card__price">$48.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Crestline wool coat</a></h3>
+                  <p class="product-card__type">Ready to Wear</p>
+                </div>
+              </article>
+
+              <article class="product-card snap-start">
+                <a class="product-card__media group" href="#" aria-label="Sable crossbody tote">
+                  <img class="product-card__image object-[72%_center]" src="/assets/image copy 7.png" alt="Natural canvas tote held in warm evening light" />
+                  <span class="product-card__badge">Trending</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex items-baseline gap-2">
+                    <span class="product-card__price">$64.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Sable crossbody tote</a></h3>
+                  <p class="product-card__type">Hand Bag</p>
+                </div>
+              </article>
+
+              <article class="product-card snap-start">
+                <a class="product-card__media group" href="#" aria-label="Classical hoodie">
+                  <img class="product-card__image object-[center_20%]" src="/assets/image-.png" alt="Model wearing a sculptural red knit top" />
+                </a>
+                <div class="product-card__details">
+                  <div class="flex items-baseline gap-2">
+                    <span class="product-card__price">$16.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Classical Hoodie</a></h3>
+                  <p class="product-card__type">Ready to Wear</p>
+                </div>
+              </article>
+
+              <article class="product-card snap-start">
+                <a class="product-card__media group" href="#" aria-label="Noé evening tote">
+                  <img class="product-card__image object-[68%_center]" src="/assets/image copy 7.png" alt="Canvas tote bag in golden evening light" />
+                  <span class="product-card__badge">Trending</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex items-baseline gap-2">
+                    <span class="product-card__price">$54.99</span>
+                    <span class="product-card__compare-price">$69.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Noé evening tote</a></h3>
+                  <p class="product-card__type">Accessories</p>
+                </div>
+              </article>
+
+              <article class="product-card snap-start">
+                <a class="product-card__media group" href="#" aria-label="Monument red coat">
+                  <img class="product-card__image object-[68%_center]" src="/assets/image.png" alt="Model walking in a vivid red coat" />
+                  <span class="product-card__sale-badge">20% off</span>
+                </a>
+                <div class="product-card__details">
+                  <div class="flex items-baseline gap-2">
+                    <span class="product-card__price">$79.99</span>
+                    <span class="product-card__compare-price">$99.99</span>
+                  </div>
+                  <h3 class="product-card__title"><a href="#">Monument red coat</a></h3>
+                  <p class="product-card__type">Ready to Wear</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="bg-white pb-14 sm:pb-20 lg:pb-24" aria-labelledby="campaign-heading">
+          <div class="mx-auto max-w-storefront px-5 sm:px-8 lg:px-10">
+            <article class="campaign-banner">
+              <img
+                class="absolute inset-0 h-full w-full object-cover object-[62%_center] sm:object-[60%_center] lg:object-center"
+                src="/assets/image.png"
+                alt="Model in a vivid red coat walking against a gray wall"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/55 via-black/5 to-transparent sm:bg-gradient-to-r sm:from-black/25 sm:via-transparent sm:to-transparent" aria-hidden="true"></div>
+
+              <div class="campaign-banner__content">
+                <p class="campaign-banner__eyebrow">Styled for the daring</p>
+                <h2 id="campaign-heading" class="mt-4 max-w-[560px] font-display text-[35px] font-medium leading-[0.96] tracking-[-0.045em] text-white sm:text-[44px] lg:text-[50px]">
+                  The Thoughtful and<br class="hidden sm:block" /> Innovative Shape Design
+                </h2>
+                <p class="mt-5 max-w-[390px] text-[11px] leading-relaxed text-white/80 sm:text-xs">
+                  One coat, three quiet essentials — composed as a single confident look. Move the pieces to shop the story.
+                </p>
+                <a class="primary-button mt-6" href="#new-arrival-heading">Shop now</a>
+              </div>
+
+              <span class="campaign-label left-[57%] top-[11%] hidden lg:inline-flex">Signature coat <b>$89</b></span>
+              <span class="campaign-label left-[48%] top-[30%] hidden lg:inline-flex">Silk shades <b>$35</b></span>
+              <span class="campaign-label bottom-[18%] left-[44%] hidden lg:inline-flex">Runner sole <b>$60</b></span>
+
+              <a class="campaign-product" href="#" aria-label="Shop Canvas Tote Bag">
+                <span class="min-w-0 flex-1 p-3 sm:p-4">
+                  <span class="block text-[9px] font-bold text-vermilion sm:text-[10px]">$48.99</span>
+                  <span class="mt-1 block truncate font-display text-sm font-semibold sm:text-base">Canvas Tote Bag</span>
+                  <span class="mt-1 block text-[8px] text-ink/55 sm:text-[9px]">Bags &amp; Accessories</span>
+                </span>
+                <img class="h-full w-[42%] object-cover object-[70%_center]" src="/assets/image copy 7.png" alt="Natural canvas tote bag" />
+                <span class="absolute bottom-2.5 left-1/2 flex size-5 -translate-x-1/2 items-center justify-center rounded-full bg-vermilion text-white shadow-sm sm:size-6" aria-hidden="true">+</span>
+              </a>
+            </article>
           </div>
         </section>
       </main>
