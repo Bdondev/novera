@@ -8,7 +8,7 @@
   }
 
   body {
-    @apply bg-oxblood font-sans text-ink antialiased;
+    @apply bg-white font-sans text-ink antialiased;
   }
 
   button,
@@ -18,10 +18,6 @@
 }
 
 @layer components {
-  .site-container {
-    @apply mx-auto w-full max-w-[1280px] bg-white;
-  }
-
   .icon-button {
     @apply inline-flex size-9 items-center justify-center rounded-full text-ink transition-colors duration-200 hover:bg-black/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vermilion focus-visible:ring-offset-2;
   }
