@@ -1,0 +1,16 @@
+{
+  "name": "novera-storefront-prototype",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build:css": "tailwindcss -i ./src/input.css -o ./styles.css --minify",
+    "build": "npm run build:css && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.17",
+    "vite": "^7.1.1"
+  }
+}
