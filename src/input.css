@@ -151,6 +151,92 @@
   .campaign-product {
     @apply absolute right-4 top-4 z-20 flex h-[94px] w-[210px] overflow-hidden rounded-xl border border-white/80 bg-white/95 text-ink shadow-xl transition-transform duration-300 hover:-translate-y-1 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:bottom-7 sm:right-7 sm:top-auto sm:h-[124px] sm:w-[300px] lg:bottom-9 lg:right-9;
   }
+
+  .editorial-banner {
+    @apply relative isolate min-h-[680px] overflow-hidden rounded-2xl bg-[#302a23] sm:min-h-[540px] lg:min-h-[570px];
+  }
+
+  .editorial-banner__image {
+    @apply absolute inset-0 h-full w-full object-cover object-center;
+  }
+
+  .editorial-banner__overlay {
+    @apply absolute inset-0 bg-[linear-gradient(90deg,rgba(0,0,0,0.64)_0%,rgba(0,0,0,0.27)_45%,rgba(0,0,0,0.12)_100%),linear-gradient(0deg,rgba(0,0,0,0.58)_0%,rgba(0,0,0,0.02)_62%)];
+  }
+
+  .editorial-banner__inner {
+    @apply relative z-10 flex min-h-[680px] flex-col px-7 pb-7 pt-36 text-white sm:min-h-[540px] sm:px-7 sm:pb-8 sm:pt-40 lg:min-h-[570px] lg:px-7 lg:pb-9 lg:pt-48;
+  }
+
+  .editorial-banner__message {
+    @apply max-w-[500px];
+  }
+
+  .editorial-banner__heading {
+    @apply max-w-[500px] font-display text-[35px] font-bold leading-[1.05] tracking-[-0.025em] text-white sm:text-[42px] lg:text-[43px];
+  }
+
+  .editorial-banner__cta {
+    @apply mt-7 min-h-9 px-5 text-[11px] normal-case tracking-normal;
+  }
+
+  .editorial-banner__benefits {
+    @apply mt-auto grid border-t border-white/45 pt-7 sm:grid-cols-3 sm:gap-7 sm:pt-7 lg:gap-12;
+  }
+
+  .editorial-banner__benefit {
+    @apply flex flex-col items-start;
+  }
+
+  .editorial-banner__benefit + .editorial-banner__benefit {
+    @apply mt-7 border-t border-white/20 pt-7 sm:mt-0 sm:border-t-0 sm:pt-0;
+  }
+
+  .editorial-banner__icon {
+    @apply size-9 shrink-0 object-contain;
+  }
+
+  .editorial-banner__benefit h3 {
+    @apply mt-5 font-display text-[17px] font-semibold leading-tight tracking-[-0.02em] sm:text-[18px];
+  }
+
+  .editorial-banner__benefit p {
+    @apply mt-5 max-w-[270px] text-[10px] leading-[1.65] text-white/90 sm:text-[11px];
+  }
+}
+
+@media (max-width: 767px) {
+  .editorial-banner__image {
+    @apply object-[58%_center];
+  }
+
+  .editorial-banner__inner {
+    @apply px-7 pb-7 pt-32;
+  }
+
+  .editorial-banner__heading {
+    @apply text-[32px] leading-[1.02] tracking-[-0.03em];
+  }
+
+  .editorial-banner__benefits {
+    @apply pt-5;
+  }
+
+  .editorial-banner__benefit {
+    @apply py-1;
+  }
+
+  .editorial-banner__benefit + .editorial-banner__benefit {
+    @apply mt-5 pt-5;
+  }
+
+  .editorial-banner__benefit h3 {
+    @apply mt-3 text-[16px];
+  }
+
+  .editorial-banner__benefit p {
+    @apply mt-2 max-w-[290px] text-[9px] leading-[1.5];
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
