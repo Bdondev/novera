@@ -1,6 +1,25 @@
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
 const menuLabel = document.querySelector("[data-menu-label]");
+const siteHeader = document.querySelector("[data-site-header]");
+
+let scrollFrame = 0;
+
+const updateHeaderOnScroll = () => {
+  scrollFrame = 0;
+  siteHeader?.classList.toggle("site-header--scrolled", window.scrollY > 24);
+};
+
+window.addEventListener(
+  "scroll",
+  () => {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(updateHeaderOnScroll);
+  },
+  { passive: true }
+);
+
+updateHeaderOnScroll();
 
 const setMenuState = (isOpen) => {
   menuToggle?.setAttribute("aria-expanded", String(isOpen));
